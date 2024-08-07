@@ -14,6 +14,8 @@ Python 3.x
 - Flask-Login
 - Flask-WTF
 - Flask-SQLAlchemy
+
+
 **Run the application:**
     ```bash
     python app.py 
