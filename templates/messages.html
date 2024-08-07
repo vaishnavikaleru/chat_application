@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Messages{% endblock %}
+{% block body %}
+<div class="messages-section">
+    <h1 class="animate__animated animate__fadeInDown">Messages</h1>
+    <div class="send-message animate__animated animate__fadeInUp">
+        <h2>Send a Message</h2>
+        <form action="/messages" method="post">
+            <div class="mb-3">
+                <label for="to_user" class="form-label">To User ID:</label>
+                <input type="text" class="form-control" id="to_user" name="to_user" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message:</label>
+                <textarea class="form-control" id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send</button>
+        </form>
+    </div>
+    <div class="received-messages animate__animated animate__fadeInUp">
+        <h2>Received Messages</h2>
+        {% for msg in messages %}
+            <div class="message-card">
+                <strong>From {{ msg['username'] }}:</strong>
+                <p>{{ msg['message'] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

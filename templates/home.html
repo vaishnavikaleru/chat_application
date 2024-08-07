@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="welcome-section">
+    <h1 class="animate__animated animate__fadeInDown">Welcome to ChatApp!</h1>
+    {% if user %}
+        <div class="profile-card animate__animated animate__fadeInUp">
+            <p>Hello, <strong>{{ user.name }}</strong>! Here's your profile:</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Date of Birth:</strong> {{ user.dob }}</p>
+        </div>
+    {% else %}
+        <div class="auth-links animate__animated animate__fadeInUp">
+            <p>Please <a href="/login" class="btn btn-primary">Login</a> or <a href="/signup" class="btn btn-secondary">Register</a> to see profile details.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

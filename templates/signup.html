@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% block body %}
+<div class="modal-dialog modal-dialog-centered animate__animated animate__fadeInUp">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Sign Up</h5>
+        </div>
+        <div class="modal-body">
+            <form action="/signup" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="mb-3">
+                    <label for="dob" class="form-label">Date of Birth:</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+            </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+            <p>Already a user? <a href="/login" class="btn btn-secondary">Log In</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
